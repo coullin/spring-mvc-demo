@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9ee405c6-1731-411f-8ae8-a480b4d44b29">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="9682849a-3042-49e6-b00c-16c2c16015dd">
+		<field name="cname" class="java.lang.String"/>
+		<field name="score" class="java.lang.Integer"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="comment" class="java.lang.String">
+		<fieldDescription><![CDATA[comment]]></fieldDescription>
+	</field>
+	<field name="grade" class="java.lang.String">
+		<fieldDescription><![CDATA[grade]]></fieldDescription>
+	</field>
+	<field name="list" class="java.util.List">
+		<fieldDescription><![CDATA[list]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="sex" class="java.lang.Character">
+		<fieldDescription><![CDATA[sex]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="214" y="0" width="100" height="20" uuid="43a66536-f9b5-478a-94c7-d4e06dc4c1dc"/>
+				<text><![CDATA[student score]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="ad8ad9d5-1f42-4630-a658-d64b8076e99d"/>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="2" width="100" height="20" uuid="f6211b13-9571-478f-9571-4ba6352588bf"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="22" width="100" height="20" uuid="672e9447-dfd9-4f10-bb67-97b7d92e8ce2"/>
+				<text><![CDATA[Sex:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="22" width="100" height="20" uuid="2bd5e7b9-8ae5-41f4-8cb7-e6b220250bf2"/>
+				<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="42" width="100" height="20" uuid="7e2690d1-518e-4383-812b-a23e1a1481e4"/>
+				<text><![CDATA[grade:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="42" width="100" height="20" uuid="862b632a-3ae4-471f-9620-fc671d9ce93d"/>
+				<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="62" width="100" height="20" uuid="e62221d9-01c1-4543-b745-3b4a11f52b14"/>
+				<text><![CDATA[comment:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="62" width="100" height="20" uuid="761e38f0-7636-4e6f-a934-0312181b3249"/>
+				<textFieldExpression><![CDATA[$F{comment}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="52" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="31" width="200" height="21" uuid="d91ce468-b528-4667-a29b-b5500336d5f0"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="8a46d1ba-e29f-4a22-b59e-14563d64c6db">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{list})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="21" width="200">
+						<textField>
+							<reportElement x="0" y="0" width="100" height="20" uuid="1e1db708-f230-4594-8123-551ec3d9915c"/>
+							<box>
+								<pen lineWidth="0.5" lineColor="#424242"/>
+								<topPen lineWidth="0.5" lineColor="#424242"/>
+								<leftPen lineWidth="0.5" lineColor="#424242"/>
+								<bottomPen lineWidth="0.5" lineColor="#424242"/>
+								<rightPen lineWidth="0.5" lineColor="#424242"/>
+							</box>
+							<textFieldExpression><![CDATA[$F{cname}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="100" y="0" width="100" height="20" uuid="bf80ad32-b3fb-4fbb-8339-373aa217554d"/>
+							<box>
+								<pen lineWidth="0.5" lineColor="#424242"/>
+								<topPen lineWidth="0.5" lineColor="#424242"/>
+								<leftPen lineWidth="0.5" lineColor="#424242"/>
+								<bottomPen lineWidth="0.5" lineColor="#424242"/>
+								<rightPen lineWidth="0.5" lineColor="#424242"/>
+							</box>
+							<textFieldExpression><![CDATA[$F{score}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="6878b482-c32d-46b9-91eb-c69b2cf7caf6"/>
+				<text><![CDATA[Score]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
